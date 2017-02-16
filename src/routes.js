@@ -21,20 +21,8 @@ var routes = (
             <IndexRoute component={HomePage}/>
             <Route path="authors" component={AuthorPage}/>
             <Route path="author" component={ManageAuthorPage}/>
-            <Route
-                path="about"
-                component={AboutPage}
-                onEnter={function (location, replaceWith) {
-                if (!confirm('Are you sure you want to read a page that\'s this boring?')) {
-                    {/*console.log(location); console.log(replaceWith);*/}
-                    return replaceWith(location); // this is not working as expected. 
-                    } 
-                    }} 
-                onLeave={function () {
-                if (!confirm('Are you sure you want to leave a page that\'s this exciting?')) {
-                    return false; // this is not working as expected. 
-                    } 
-                    }} />
+            <Route path="author/:id" component={ManageAuthorPage}/>
+            <Route path="about" component={AboutPage} />
             <Route path="*" component={NotFoundPage}/>
         </Route>
     </Router>
