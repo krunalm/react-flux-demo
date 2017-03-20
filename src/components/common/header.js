@@ -19,6 +19,9 @@ var Header = React.createClass({
                             <Link to="authors">Authors</Link>
                         </li>
                         <li>
+                            <Link to="courses">Courses</Link>
+                        </li>
+                        <li>
                             <Link to="about">About</Link>
                         </li>
                     </ul>

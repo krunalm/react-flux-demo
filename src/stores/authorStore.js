@@ -28,10 +28,15 @@ var AuthorStore = assign({}, EventEmitter.prototype, {
 
     getAuthorById: function(id){
         return _.find(_authors, {id: id});
+    },
+
+    getAuthorFullName: function(author){
+        return author.firstName + ' ' + author.lastName;
     }
 });
 
 Dispatcher.register(function(action){
+    // console.log('author store hit by dispatcher... ');
     switch(action.actionType){
         case ActionTypes.INITIALIZE:
             _authors = action.initialData.authors;
